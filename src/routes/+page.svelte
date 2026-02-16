@@ -11,7 +11,7 @@
   let items: Item[] = [];
   let visibility = $state("hidden")
 
-  for (let i = 0; i < 100; i++) {
+  for (let i = 0; i < 1000; i++) {
     items.push({ name: `Item ${i + 1}`, image: randomImage() });
   }
 

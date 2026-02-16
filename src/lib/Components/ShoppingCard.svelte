@@ -31,9 +31,11 @@
 <div class="Card">
   <div class={visibility}>
     <h1>Warenkorb</h1>
-    {#each items as item (item.name)}
+    <div class="grid grid-cols-3 gap-y-10">
+      {#each items as item (item.name)}
         <ShoppingCardItem name={item.name} image={item.image} />
-    {/each}
+      {/each}
+    </div>
    </div>
 </div>
 
