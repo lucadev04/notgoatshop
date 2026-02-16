@@ -1,4 +1,6 @@
 <script>
+	import { ShoppingCart } from "@lucide/svelte";
+
   let { name, image } = $props();
 
   function getItems() {
@@ -14,6 +16,9 @@
     let items = getItems();
     items.push({ name: name, image: image });
     localStorage.setItem("items", JSON.stringify(items));
+    if (window !== undefined) {
+      window.location.reload()
+    }
   }
 </script>
 
@@ -27,6 +32,6 @@
         <img src= {image} alt="irgendein dummes Bild von Ziegenhainy" class="image"/>
     </div>
     <div class="button-container">
-        <button class="card-button" onclick={addItem}>add to card</button>
+        <button class="card-button" onclick={addItem}><ShoppingCart/></button>
     </div>
 </div>

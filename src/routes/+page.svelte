@@ -53,7 +53,7 @@
     <ShoppingCart />
   </button>
 </div>
-<ShoppingCard visibility={visibility} />
+<ShoppingCard visibility={visibility}/>
 <div class="grid grid-cols-3 gap-y-4">
   {#each items as item}
     <ShoppingItem name={item.name} image={item.image} />

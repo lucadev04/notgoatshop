@@ -34,6 +34,8 @@
     border-radius: 5px;
     padding: 5px;
     margin-top: auto;
+    width: 80px;
+    text-align: center;
   }
 
   .card-button:hover {
