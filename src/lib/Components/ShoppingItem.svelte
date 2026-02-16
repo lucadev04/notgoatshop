@@ -16,6 +16,7 @@
     let items = getItems();
     items.push({ name: name, image: image });
     localStorage.setItem("items", JSON.stringify(items));
+    alert("Added item")
     if (window !== undefined) {
       window.location.reload()
     }

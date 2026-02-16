@@ -9,7 +9,8 @@
   }
 
   let items: Item[] = [];
-  let visibility = $state("hidden")
+  let visibility = $state("hidden");
+  let cardItems = $state(0);
 
   for (let i = 0; i < 1000; i++) {
     items.push({ name: `Item ${i + 1}`, image: randomImage() });
@@ -32,7 +33,6 @@
       case 3:
         image = "https://cdn.discordapp.com/attachments/1463870568418770990/1472881022608740467/image.png?ex=69942ed8&is=6992dd58&hm=08aa6d2e69a29636fd1c370ca4c24e40c333882a093a6396f6c516f7d5319f06&";
         break;
-
     }
 
     return image;
@@ -40,10 +40,22 @@
 
   function changeVisibility() {
     if (visibility == "visible") {
-        visibility = "hidden"
+        visibility = "hidden";
     } else {
-        visibility = "visible"
+        visibility = "visible";
     }
+  }
+
+  function getItemsCount(): number {
+    if (typeof window !== 'undefined') {
+      let items = localStorage.getItem("items");
+      if (items === null) {
+        localStorage.setItem("items", "[]");
+        return 0;
+      }
+      return JSON.parse(items).length;
+    }
+    return 0;
   }
 </script>
 
@@ -51,11 +63,12 @@
   <h1>Not goat shop</h1>
   <button class="flex items-end hover:bg-sky-700 hover:rounded-xl hover:border-15" onclick={changeVisibility}>
     <ShoppingCart />
+    <p>{getItemsCount()}</p>
   </button>
 </div>
 <ShoppingCard visibility={visibility}/>
 <div class="grid grid-cols-3 gap-y-4">
   {#each items as item}
-    <ShoppingItem name={item.name} image={item.image} />
+    <ShoppingItem name={item.name} image={item.image}/>
   {/each}
 </div>
