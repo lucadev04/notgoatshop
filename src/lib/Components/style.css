@@ -3,39 +3,39 @@
     display: flex;
     justify-content: center;
     font-weight: bold;
-}
+  }
 
-.item {
+  .item {
     border: 1px solid black;
     border-radius: 5px;
-    margin: 30px;
+    margin: 40px;
     width: 400px;
-}
+    display: flex;
+    flex-direction: column;
+    height: 100%;
 
+  }
 
-.button-container {
+  .image-container {
     display: flex;
     justify-content: center;
-    align-items: end; 
-}
+  }
 
-.card-button {
+  .button-container {
+    display: flex;
+    justify-content: center;
+    margin-top: auto; 
+    padding: 5px;
+  }
+
+  .card-button {
     background-color: #5f9ea0;
     color: white;
     border-radius: 5px;
     padding: 5px;
-    margin-top: 10px;
-}
+    margin-top: auto;
+  }
 
-
-.card-button:hover {
+  .card-button:hover {
     background-color: black;
-}
-
-.image-container {
-    display: flex;
-    justify-content: center;
-}
-
-.image {
-}
+  }

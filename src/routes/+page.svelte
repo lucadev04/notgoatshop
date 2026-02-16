@@ -1,6 +1,7 @@
 <script lang="ts">
   import { ShoppingCart } from '@lucide/svelte';
   import ShoppingItem from '$lib/Components/ShoppingItem.svelte';
+  import ShoppingCard from '$lib/Components/ShoppingCard.svelte';
 
   interface Item {
     name: string;
@@ -8,6 +9,7 @@
   }
 
   let items: Item[] = [];
+  let visibility = $state("hidden")
 
   for (let i = 0; i < 100; i++) {
     items.push({ name: `Item ${i + 1}`, image: randomImage() });
@@ -35,15 +37,24 @@
 
     return image;
   }
+
+  function changeVisibility() {
+    if (visibility == "visible") {
+        visibility = "hidden"
+    } else {
+        visibility = "visible"
+    }
+  }
 </script>
 
 <div class="header">
   <h1>Not goat shop</h1>
-  <button class="flex items-end hover:bg-sky-700 hover:rounded-xl hover:border-15">
+  <button class="flex items-end hover:bg-sky-700 hover:rounded-xl hover:border-15" onclick={changeVisibility}>
     <ShoppingCart />
   </button>
 </div>
-<div class="grid grid-cols-3">
+<ShoppingCard visibility={visibility} />
+<div class="grid grid-cols-3 gap-y-4">
   {#each items as item}
     <ShoppingItem name={item.name} image={item.image} />
   {/each}
