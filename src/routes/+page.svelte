@@ -60,7 +60,7 @@
 </script>
 
 <div class="header">
-  <h1>Not goat shop</h1>
+  <h1>goat shop</h1>
   <button class="flex items-end hover:bg-sky-700 hover:rounded-xl hover:border-15" onclick={changeVisibility}>
     <ShoppingCart />
     <p>{getItemsCount()}</p>
