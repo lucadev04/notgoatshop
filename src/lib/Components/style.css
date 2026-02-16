@@ -1,0 +1,41 @@
+.title {
+    font-size: 25px;
+    display: flex;
+    justify-content: center;
+    font-weight: bold;
+}
+
+.item {
+    border: 1px solid black;
+    border-radius: 5px;
+    margin: 30px;
+    width: 400px;
+}
+
+
+.button-container {
+    display: flex;
+    justify-content: center;
+    align-items: end; 
+}
+
+.card-button {
+    background-color: #5f9ea0;
+    color: white;
+    border-radius: 5px;
+    padding: 5px;
+    margin-top: 10px;
+}
+
+
+.card-button:hover {
+    background-color: black;
+}
+
+.image-container {
+    display: flex;
+    justify-content: center;
+}
+
+.image {
+}
