@@ -16,7 +16,7 @@
     let items = getItems();
     items.push({ name: name, image: image });
     localStorage.setItem("items", JSON.stringify(items));
-    alert("Added item")
+    alert("Item zum Warenkorb hinzugefügt")
     if (window !== undefined) {
       window.location.reload()
     }
